@@ -1,7 +1,5 @@
 "use client"
-import { useRef, useState } from "react"
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
-import { AnimatePresence, motion } from "motion/react"
 import { Button } from "./ui/button"
 
 const testimonials = [
