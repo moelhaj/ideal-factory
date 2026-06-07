@@ -32,7 +32,7 @@ export default function Contact() {
     <section className="relative overflow-hidden bg-muted px-4 py-20 md:px-8 md:py-28 lg:px-20">
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
         <div>
-          <span className="mb-5 inline-block rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-white">
+          <span className="mb-5 inline-block rounded-lg bg-primary px-4 py-1.5 text-sm font-semibold text-white">
             Get in touch
           </span>
           <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
