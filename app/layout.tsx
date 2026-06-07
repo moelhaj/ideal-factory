@@ -1,9 +1,11 @@
 import { cn } from "@/lib/utils"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+
+import { Inter, Lexend } from "next/font/google"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const lexend = Lexend({ subsets: ["latin"], variable: "--font-heading" })
 
 export const metadata: Metadata = {
   title: "Ideal Factory | Villa Interior Design & Manufacturing UAE",
@@ -37,7 +39,13 @@ export default function RootLayout({
       lang="en"
       dir="ltr"
       suppressHydrationWarning
-      className={cn("antialiased", "font-sans", inter.variable)}
+      className={cn(
+        "antialiased",
+        "font-sans",
+        inter.variable,
+        "font-heading",
+        lexend.variable
+      )}
     >
       <body>{children}</body>
     </html>

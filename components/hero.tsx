@@ -30,7 +30,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5 }}
-          className="max-w-3xl text-3xl leading-tight font-bold text-white md:text-5xl lg:text-6xl"
+          className="max-w-3xl font-heading text-3xl leading-tight font-bold text-white lg:text-4xl"
         >
           Design & Delivery of Your Villa Interiors
           <br />
@@ -41,7 +41,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.75 }}
-          className="max-w-md text-sm leading-relaxed text-white/60 md:text-base lg:text-lg"
+          className="max-w-md text-sm leading-relaxed md:text-base lg:text-lg"
         >
           Kitchens, closets, doors, and premium uPVC windows designed,
           manufactured, and installed by one trusted Emirati factory.
