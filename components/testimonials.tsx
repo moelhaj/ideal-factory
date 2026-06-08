@@ -1,6 +1,7 @@
 "use client"
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
 import { Button } from "./ui/button"
+import Image from "next/image"
 
 const testimonials = [
   {
@@ -23,7 +24,14 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-accent px-4 py-20 md:px-8 md:py-28 lg:px-20">
+    <section className="relative bg-muted px-4 py-20 md:px-8 md:py-28 lg:px-20">
+      <Image
+        src="/testimonials/left-pattern.png"
+        alt="Left Pattern"
+        className="absolute top-1/2 left-0 -translate-y-1/2"
+        width={200}
+        height={200}
+      />
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col gap-10 md:items-start md:gap-16 lg:flex-row">
           <div className="max-w-md flex-shrink-0">
@@ -31,7 +39,7 @@ export default function Testimonials() {
               Testimonials
             </p>
             <h2 className="mb-6 text-2xl leading-snug font-bold text-white md:text-3xl">
-              What They&apos;re Talking About Company&nbsp;?
+              What They&apos;re Talking About Ideal Factory&nbsp;?
             </h2>
             <p className="mb-8 text-sm leading-relaxed text-gray-400">
               Real villa owners across the UAE have trusted Ideal Factory for
@@ -42,14 +50,14 @@ export default function Testimonials() {
               <Button
                 variant="outline"
                 size="icon"
-                className="rounded-full border-zinc-400 text-zinc-400"
+                className="rounded-full border-zinc-700 text-zinc-700"
               >
                 <ChevronLeft size={18} />
               </Button>
               <Button
                 variant="outline"
                 size="icon"
-                className="rounded-full text-white"
+                className="rounded-full border-primary text-primary"
               >
                 <ChevronRight size={18} />
               </Button>
@@ -57,14 +65,14 @@ export default function Testimonials() {
           </div>
 
           <div className="relative flex-1 overflow-hidden">
-            <div className="flex snap-x snap-mandatory [scrollbar-width:none] gap-3 overflow-x-auto pb-3 [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            <div className="flex snap-x snap-mandatory [scrollbar-width:none] flex-col gap-3 overflow-x-auto pb-3 [-ms-overflow-style:none] lg:flex-row [&::-webkit-scrollbar]:hidden">
               {testimonials.map((testimonial, index) => (
                 <div
                   key={testimonial.id + "-" + index}
                   className="flex flex-col justify-between rounded-2xl border border-white/8 bg-[#2d2829] p-6"
                 >
                   <div className="mb-4">
-                    <Quote />
+                    <Quote className="size-10 rotate-180 text-primary" />
                   </div>
                   <p className="mb-6 flex-1 text-sm leading-relaxed text-gray-300 md:text-base">
                     {testimonial.quote}

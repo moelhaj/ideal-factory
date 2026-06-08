@@ -20,27 +20,11 @@ const navLinks = [
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [isHidden, setIsHidden] = useState(false)
-  const { scrollY } = useScroll()
-  const latestScrollRef = useRef(0)
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const difference = latest - latestScrollRef.current
-    if (Math.abs(difference) > 50) {
-      setIsHidden(difference > 0)
-      latestScrollRef.current = latest
-    }
-  })
-
-  const variants = {
-    hidden: { y: "-100%" },
-    visible: { y: "0%" },
-  }
   return (
     <motion.header
-      animate={isHidden ? "hidden" : "visible"}
-      variants={variants}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
       className="fixed z-50 flex w-full justify-center p-3 lg:p-6"
     >
       <nav className="flex w-full flex-col rounded-lg bg-black/45 px-3 py-3 backdrop-blur-xl lg:flex-row lg:items-center lg:justify-between lg:px-6">
@@ -89,12 +73,7 @@ export default function Navbar() {
 
         <AnimatePresence>
           {mobileOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="mt-3 rounded-2xl px-6 py-4 lg:hidden"
-            >
+            <div className="pt-6">
               <ul className="flex flex-col gap-4">
                 {navLinks.map((link) => (
                   <li key={link.label}>
@@ -108,7 +87,7 @@ export default function Navbar() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           )}
         </AnimatePresence>
       </nav>

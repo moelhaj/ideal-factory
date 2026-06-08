@@ -3,6 +3,7 @@ import { useState } from "react"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
 import { Button } from "./ui/button"
+import Image from "next/image"
 
 interface ContactForm {
   name: string
@@ -30,6 +31,21 @@ export default function Contact() {
 
   return (
     <section className="relative overflow-hidden bg-muted px-4 py-20 md:px-8 md:py-28 lg:px-20">
+      <Image
+        src="/contact/right-pattern.png"
+        alt="Right Pattern"
+        className="absolute top-0 right-0"
+        width={200}
+        height={200}
+      />
+      <Image
+        src="/contact/left-pattern.png"
+        alt="Left Pattern"
+        className="absolute bottom-0 left-0"
+        width={200}
+        height={200}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/30 to-black/80" />
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
         <div>
           <span className="mb-5 inline-block rounded-lg bg-primary px-4 py-1.5 text-sm font-semibold text-white">

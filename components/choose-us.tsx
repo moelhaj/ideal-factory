@@ -23,11 +23,11 @@ export default function ChooseUs() {
         <div className="flex flex-col items-center gap-0 md:flex-row">
           <div className="relative flex min-h-[240px] w-full shrink-0 items-end justify-center md:w-[45%]">
             <Image
-              src="/kitchen-3d.png"
+              src="/choose-us/kitchen-3d.png"
               alt="3D kitchen illustration"
               className="w-full max-w-sm translate-y-6 object-contain md:max-w-full"
-              width={800}
-              height={600}
+              width={1000}
+              height={800}
             />
           </div>
 
@@ -42,7 +42,7 @@ export default function ChooseUs() {
               {points.map((point) => (
                 <li key={point} className="flex items-start gap-3">
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white">
-                    <Check className="size-4 text-primary" />
+                    <Check className="size-3 text-primary" />
                   </span>
                   <span className="text-sm leading-relaxed text-white/85 md:text-base">
                     {point}
@@ -53,7 +53,7 @@ export default function ChooseUs() {
 
             <Button
               size="lg"
-              className="bg-white text-primary hover:bg-white/90"
+              className="h-12 bg-white px-6 text-primary hover:bg-white/90"
             >
               <Phone size={16} className="text-primary" />
               Start Your Free 3D Design

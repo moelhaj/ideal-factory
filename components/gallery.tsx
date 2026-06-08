@@ -83,7 +83,7 @@ export default function Gallery() {
   }
 
   return (
-    <section className="bg-accent px-4 py-16 md:px-8 lg:px-16">
+    <section className="bg-muted px-4 py-16 md:px-8 lg:px-16">
       <div className="mb-8 text-center">
         <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl">
           Designed. Built. Delivered

@@ -8,6 +8,7 @@ import {
   PencilRuler,
   Wrench,
 } from "lucide-react"
+import { motion } from "motion/react"
 import Image from "next/image"
 
 const problems = [
@@ -62,9 +63,7 @@ const steps = [
 export default function Features() {
   return (
     <section className="relative bg-white px-4 py-16 md:px-8 lg:px-16">
-      {/* ── Problem + Approach block ── */}
-      <div className="mx-auto max-w-5xl rounded-3xl bg-[#1a1a1a] p-8 md:p-14">
-        {/* Heading */}
+      <div className="mx-auto max-w-5xl rounded-3xl bg-muted p-8 md:p-14">
         <h2 className="mb-4 text-2xl font-bold text-white md:text-3xl">
           Why Villa Interior Projects Often Become Difficult?
         </h2>
@@ -74,7 +73,6 @@ export default function Features() {
           final result. The lack of commitment leads to:
         </p>
 
-        {/* 2-column bullet points — 1 col on mobile */}
         <div className="mb-10 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
           {problems.map((p) => (
             <div key={p.label} className="flex items-center gap-2">
@@ -88,7 +86,6 @@ export default function Features() {
           ))}
         </div>
 
-        {/* Video */}
         <div className="relative mb-10 overflow-hidden rounded-2xl">
           <video
             src="/hero-video.mp4"
@@ -100,7 +97,6 @@ export default function Features() {
           />
         </div>
 
-        {/* The Ideal Factory Approach */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-[auto_1fr]">
           <div className="md:w-52 md:shrink-0">
             <h3 className="text-2xl leading-snug font-bold text-white">
@@ -111,9 +107,13 @@ export default function Features() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {features.map((f) => (
-              <div
+            {features.map((f, i) => (
+              <motion.div
                 key={f.title}
+                initial={{ opacity: 0, y: 35 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.7, delay: i * 0.12, ease: "easeOut" }}
                 className="rounded-2xl border border-white/[0.08] bg-white/5 p-5"
               >
                 <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-primary">
@@ -123,7 +123,7 @@ export default function Features() {
                 <p className="text-sm leading-relaxed text-gray-400">
                   {f.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

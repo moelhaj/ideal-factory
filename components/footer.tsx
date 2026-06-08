@@ -38,7 +38,7 @@ export default function Footer() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 pt-16 pb-8 md:px-8 lg:px-16">
-        <div className="grid grid-cols-2 gap-10 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="mb-5 flex items-center gap-3">
               {/* Logo mark */}
